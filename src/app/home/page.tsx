@@ -8,8 +8,19 @@ import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
+type Meal = {
+    idMeal: string;
+    strMeal: string;
+    strMealThumb: string;
+    strCategory: string;
+    strArea: string;
+    strInstructions: string;
+    strYoutube?: string;
+    [key: string]: unknown;
+};
+
 export default function Page() {
-    const [items, setItems] = useState<any[]>([]);
+    const [items, setItems] = useState<Meal[]>([]);
     const [filteredItems, setFilteredItems] = useState<any[]>([]);
     const [searchQuery, setSearchQuery] = useState("");
     const [isLoading, setIsLoading] = useState(false);

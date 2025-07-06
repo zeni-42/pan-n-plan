@@ -61,7 +61,7 @@ export default function SavedMealsPage() {
 
     return (
         <>
-            <div className="w-full h-14 px-96 flex justify-start items-center gap-7 " >
+            <div className="w-full h-14 py-10 px-96 flex justify-start items-center gap-7 " >
                 <button className="size-12 rounded-full cursor-pointer bg-zinc-900 flex justify-center items-center" onClick={() => router.push('/home')} >
                     <Home />
                 </button>

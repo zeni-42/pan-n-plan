@@ -6,7 +6,23 @@ const inter = Inter({ subsets:['latin'] })
 
 export const metadata: Metadata = {
   title: "Pan n Plan",
-  description: "A kitchen companion: explore recipes and track your to-dos",
+  description: "Discover random recipes, watch cooking tutorials, and save your favorite meals. Transform your cooking journey with Pan 'n Plan - the ultimate meal discovery and planning app.",
+  keywords: "recipes, cooking, meal planning, food discovery, cooking tutorials, recipe app",
+  authors: [{ name: "Pan 'n Plan Team" }],
+  openGraph: {
+    title: "Pan 'n Plan - Discover Amazing Meals",
+    description: "Random recipes. Full instructions. Save them forever. Your culinary adventure starts here.",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pan 'n Plan - Your Next Favorite Meal is One Click Away",
+    description: "Discover random recipes, watch cooking tutorials, and save your favorite meals.",
+  },
+  viewport: "width=device-width, initial-scale=1",
+  robots: "index, follow",
+    generator: 'v0.dev'
 };
 
 export default function RootLayout({

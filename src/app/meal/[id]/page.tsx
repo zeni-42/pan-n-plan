@@ -7,9 +7,20 @@ import { useRouter } from 'next/navigation';
 import { ChevronLeftIcon, Heart, Loader2 } from 'lucide-react';
 import { toast, ToastContainer } from 'react-toastify';
 
+type Meal = {
+    idMeal: string;
+    strMeal: string;
+    strMealThumb: string;
+    strCategory: string;
+    strArea: string;
+    strInstructions: string;
+    strYoutube?: string;
+    [key: string]: unknown;
+};
+
 export default function MealPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = use(params);
-    const [meal, setMeal] = useState<any>(null);
+    const [meal, setMeal] = useState<Meal| null>(null);
     const [isLoading, setIsLoading] = useState(true);
     const router = useRouter();
 
@@ -28,8 +39,8 @@ export default function MealPage({ params }: { params: Promise<{ id: string }> }
     const handleSaveMeal = () => {
         try {
         const savedIds = JSON.parse(localStorage.getItem('savedMeals') || '[]');
-        if (!savedIds.includes(meal.idMeal)) {
-            const updated = [...savedIds, meal.idMeal];
+        if (!savedIds.includes(meal?.idMeal)) {
+            const updated = [...savedIds, meal?.idMeal];
             localStorage.setItem('savedMeals', JSON.stringify(updated));
             toast.success('Meal saved ✅');
         } else {
